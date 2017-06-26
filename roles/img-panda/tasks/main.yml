@@ -1,0 +1,15 @@
+---
+- name: Copy {{ appname }} app
+  copy: src={{ appname }} dest=/opt/ owner=root group=root mode=0755
+  register: copyapp
+
+- name: npm install
+  npm: path=/opt/{{ appname }}
+
+- name: "Start {{ appname }}"
+  command: forever start /opt/{{ appname }}/{{ appname }}.js
+  when: "forever_list.stdout.find('/opt/img-panda/img-panda.js') == -1"
+
+- name: "restart {{ appname }} automatically after new files where added."
+  command: forever restart /opt/{{ appname }}/{{ appname }}.js 
+  when: copyapp.changed

@@ -1,0 +1,12 @@
+{
+  "name": "img-panda",
+  "version": "0.0.0",
+  "description": "Img-panda!",
+  "main": "img-panda.js",
+  "dependencies": {
+    "express": "latest",
+    "passport": "~0.3",
+    "passport-http": "~0.3",
+    "connect": "latest"
+  }
+}

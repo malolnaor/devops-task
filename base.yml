@@ -1,0 +1,19 @@
+---
+- name: Install Forever Service
+  hosts: base
+  become: yes
+  roles:
+    - { role: nodejs, tags: nodejs } 	
+    - { role: forever, tags: forever }
+
+- name: Base img-panda service
+  hosts: base
+  become: yes
+  roles:
+    - { role: img-panda, tags: img-panda, appname: "img-panda" }
+
+- name: Base smart-panda service
+  hosts: base
+  become: yes
+  roles:
+    - { role: smart-panda, tags: smart-panda, appname: "smart-panda" }
