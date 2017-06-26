@@ -29,6 +29,8 @@ I tried to use {{ appname }} inside this line, but ansible-when response with er
 After reading a bit about this matter it seems like a bug, further info can be found at:
 https://github.com/ansible/ansible/issues/22690
 
+**** deploy is preformed with root because there was no other requirment.
+
 - Wrapper - Bonus question.
 
 I did not worked with wrapper-ansible before, but I saw few examples and I wanted to give it a shot.
